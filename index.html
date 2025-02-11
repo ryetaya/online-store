@@ -176,15 +176,14 @@
         };
 
         const latinData = {
-            surname: 'Kozhemjako',
-            name: 'Tatjana',
+            surname: 'Kozhemyako',
+            name: 'Tatiana',
             patronymic: 'Vladimirovna'
         };
 
-        // Обработчик клика на кнопку "Изменить"
+        
         changeButton.addEventListener('click', () => {
             if (isRussian) {
-                // Если сейчас русские значения, меняем на латинские
                 surnameElement.textContent = latinData.surname;
                 nameElement.textContent = latinData.name;
                 patronymicElement.textContent = latinData.patronymic;
