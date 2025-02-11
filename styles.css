@@ -41,7 +41,7 @@ body {
   width: 1366px;
   height: 768px;
   margin: 0 auto;
-  background-image: url("/asssets/2669bbb70886aaf60ab23683494c2331.jpg");
+  background-image: url("asssets/2669bbb70886aaf60ab23683494c2331.jpg");
   display: flex;
   justify-content: end;
 }
