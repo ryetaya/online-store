@@ -77,12 +77,12 @@
     <!-- Заголовок "Альбом" -->
     <div class="title" id="album">Альбом</div>
     <div class="album-container">
-        <img src="asssets/potato (1).png" alt="Image 1" />
-        <img src="asssets/potato (2).png" alt="Image 2" />
-        <img src="asssets/potato (3).png" alt="Image 3" />
-        <img src="asssets/potato (4).png" alt="Image 4" />
-        <img src="asssets/potato (5).png" alt="Image 5" />
-        <img src="asssets/potato (6).png" alt="Image 6" />
+        <img src="asssets/potato (1).png" alt="Image 1" class="album-image" />
+        <img src="asssets/potato (2).png" alt="Image 2" class="album-image" />
+        <img src="asssets/potato (3).png" alt="Image 3" class="album-image" />
+        <img src="asssets/potato (4).png" alt="Image 4" class="album-image" />
+        <img src="asssets/potato (5).png" alt="Image 5" class="album-image" />
+        <img src="asssets/potato (6).png" alt="Image 6" class="album-image" />
     </div>
     <div class="list-container">
         <ul>
@@ -154,13 +154,25 @@
     <div class="link-to-main">
         <a href="#">К началу страницы</a>
     </div>
-    <!-- Встроенный JavaScript-код -->
+
+
+
+    
     <script>
         // Получаем элементы DOM
         const surnameElement = document.getElementById('surname');
         const nameElement = document.getElementById('name');
         const patronymicElement = document.getElementById('patronymic');
         const changeButton = document.getElementById('changeButton');
+        const albumImages = document.querySelectorAll('.album-image');
+
+    // Добавляем обработчик события для каждого изображения
+    albumImages.forEach(image => {
+        image.addEventListener('click', () => {
+            // Открываем изображение в новом окне
+            window.open(image.src, '_blank');
+        });
+    });
         // Начальные значения
         let isRussian = true; // Флаг для отслеживания текущего состояния
         // Русские и латинские варианты данных
