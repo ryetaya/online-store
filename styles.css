@@ -46,6 +46,10 @@ body {
   justify-content: end;
 }
 
+.album-image {
+cursor: pointer;
+}
+
 .zakladka-container {
   height: 222px;
   width: 148px;
