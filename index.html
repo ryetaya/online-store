@@ -111,6 +111,13 @@
     <div class="title" id="passport" style="width: 380px">Паспортные данные</div>
     <table>
         <tr>
+            <!-- Левая верхняя ячейка с картинкой -->
+            <td rowspan="3" style="vertical-align: top; padding-right: 10px;">
+                <img
+                    src="asssets/foni-papik-pro-zhql-p-kartinki-pomidor-dlya-detei-na-prozrachnom-1 3@2x.png"
+                    style="width: 50px; height: 50px;"
+                />
+            </td>
             <td colspan="2">РОССИЙСКАЯ ФЕДЕРАЦИЯ</td>
         </tr>
         <tr>
@@ -120,8 +127,6 @@
             <td>Дата выдачи &nbsp &nbsp 23.08.2022</td>
             <td>Код подразделения &nbsp &nbsp 520-003</td>
         </tr>
-    </table>
-    <table style="margin-top: 54px">
         <tr>
             <td>Фамилия</td>
             <td id="surname">Кожемяко</td>
@@ -176,14 +181,15 @@
         };
 
         const latinData = {
-            surname: 'Kozhemyako',
-            name: 'Tatiana',
+            surname: 'Kozhemjako',
+            name: 'Tatjana',
             patronymic: 'Vladimirovna'
         };
 
-        
+        // Обработчик клика на кнопку "Изменить"
         changeButton.addEventListener('click', () => {
             if (isRussian) {
+                // Если сейчас русские значения, меняем на латинские
                 surnameElement.textContent = latinData.surname;
                 nameElement.textContent = latinData.name;
                 patronymicElement.textContent = latinData.patronymic;
