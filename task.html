@@ -102,9 +102,9 @@
 
             if (M <= cubeVolume && M <= cylinderVolume) {
                 result = 'Жидкость может заполнить обе ёмкости.';
-            } else if (M <= cubeVolume) {
+            } else if (M <= cubeVolume && M => cylinderVolume) {
                 result = 'Жидкость может заполнить только кубическую ёмкость.';
-            } else if (M <= cylinderVolume) {
+            } else if (M <= cylinderVolume && M => cubeVolume) {
                 result = 'Жидкость может заполнить только цилиндрическую ёмкость.';
             } else {
                 result = 'Жидкость не может заполнить ни одну из ёмкостей.';
