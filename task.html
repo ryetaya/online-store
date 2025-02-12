@@ -101,13 +101,13 @@
             let result = '';
 
             if (M < cubeVolume && M < cylinderVolume) {
-                result = 'Нет Нет Нет';
+                result = 'Ни в одну из емкостей';
             } else if (M < cubeVolume) {
-                result = 'Нет Да Нет';
+                result = 'Наполнит цилиндр, но не куб';
             } else if (M < cylinderVolume) {
-                result = 'Да Нет Нет';
+                result = 'Наполнит куб, но не цилиндр';
             } else {
-                result = 'Да Да Да';
+                result = 'Наполнит обе емкости';
             }
 
             
