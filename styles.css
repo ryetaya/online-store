@@ -50,6 +50,12 @@ body {
 cursor: pointer;
 }
 
+.pasport {
+ display: flex;
+ align-items: center;
+ height: 300px;
+}
+
 .zakladka-container {
   height: 222px;
   width: 148px;
