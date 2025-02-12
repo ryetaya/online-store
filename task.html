@@ -101,13 +101,13 @@
             let result = '';
 
             if (M <= cubeVolume && M <= cylinderVolume) {
-                result = 'Да Да Да';
-            } else if (M <= cubeVolume) {
-                result = 'Да Нет Нет';
-            } else if (M <= cylinderVolume) {
-                result = 'Нет Да Нет';
-            } else {
                 result = 'Нет Нет Нет';
+            } else if (M <= cubeVolume) {
+                result = 'Нет Да Нет';
+            } else if (M <= cylinderVolume) {
+                result = 'Да Нет Нет';
+            } else {
+                result = 'Да Да Да';
             }
 
             
