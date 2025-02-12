@@ -20,42 +20,37 @@
         <div class="task-container">
             Имеются две ёмкости: кубическая с ребром A, цилиндрическая с высотой H и радиусом основания R. Определить, можно ли заполнить жидкостью объёма M первую ёмкость, вторую, обе.
         </div>
-        <form style="width: 730px; margin-top: 27px">
+        <form action="https://www.google.com/search?" target="_blank" method="GET" style="width: 730px; margin-top: 27px;">
             
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">A</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="A" placeholder="Введите ребро куба">
+                    <input type="number" class="form-control" id="A" name="A" placeholder="Введите ребро куба">
                 </div>
             </div>
-
             
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">H</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="H" placeholder="Введите высоту цилиндра">
+                    <input type="number" class="form-control" id="H" name="H" placeholder="Введите высоту цилиндра">
                 </div>
             </div>
-
             
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">R</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="R" placeholder="Введите радиус основания цилиндра">
+                    <input type="number" class="form-control" id="R" name="R" placeholder="Введите радиус основания цилиндра">
                 </div>
             </div>
-
             
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">M</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="M" placeholder="Введите объем жидкости">
+                    <input type="number" class="form-control" id="M" name="M" placeholder="Введите объем жидкости">
                 </div>
             </div>
-
             
             <button type="button" class="btn btn-primary" id="checkButton" style="margin-top: 27px;">Проверить</button>
-
             
             <div class="form-group row" style="margin-top: 27px; justify-content: space-between; display: flex;">
                 <label class="col-sm-2 col-form-label" style="min-width: 250px;">Результат решения задачи</label>
@@ -63,12 +58,10 @@
                     <input type="text" class="form-control" id="result" readonly>
                 </div>
             </div>
-
             
-            <button type="button" class="btn btn-primary" style="margin-top: 27px;">Отправить</button>
+            <button type="submit" class="btn btn-primary" style="margin-top: 27px;">Отправить</button>
         </form>
     </div>
-
     
     <script>
         // Получаем элементы DOM
@@ -78,7 +71,6 @@
         const MInput = document.getElementById('M');
         const checkButton = document.getElementById('checkButton');
         const resultInput = document.getElementById('result');
-
         
         checkButton.addEventListener('click', () => {
             
@@ -86,20 +78,16 @@
             const H = parseFloat(HInput.value);
             const R = parseFloat(RInput.value);
             const M = parseFloat(MInput.value);
-
             
             if (isNaN(A) || isNaN(H) || isNaN(R) || isNaN(M) || A <= 0 || H <= 0 || R <= 0 || M <= 0) {
                 resultInput.value = 'Введите корректные положительные числа!';
                 return;
             }
-
             
             const cubeVolume = Math.pow(A, 3); 
             const cylinderVolume = Math.PI * Math.pow(R, 2) * H; 
-
             
             let result = '';
-
             if (M <= cubeVolume && M <= cylinderVolume) {
                 result = 'Да Да Да';
             } else if (M <= cubeVolume) {
@@ -109,7 +97,6 @@
             } else {
                 result = 'Нет Нет Нет';
             }
-
             
             resultInput.value = result;
         });
