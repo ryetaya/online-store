@@ -31,7 +31,7 @@
     <div class="image_wrapper">
         <div class="zakladka-container">
             <ul>
-                <!-- Ссылки с anchor -->
+               
                 <li><a href="#table">Таблица</a></li>
                 <li><a href="#album">Альбом</a></li>
                 <li>
@@ -42,7 +42,7 @@
             </ul>
         </div>
     </div>
-    <!-- Заголовок "Таблица" -->
+   
     <div class="title" id="table">Таблица</div>
     <div class="table_container">
         <div class="first">
@@ -74,7 +74,7 @@
             </div>
         </div>
     </div>
-    <!-- Заголовок "Альбом" -->
+   
     <div class="title" id="album">Альбом</div>
     <div class="album-container">
         <img src="asssets/potato.jpg" alt="potato" class="album-image" />
@@ -105,7 +105,7 @@
             Овощи семейства Крестоцветные, или Капустные, такие как капуста белокочанная и краснокочанная, цветная капуста, брокколи, брюссельская капуста, капуста кольраби, листовая капуста (пекинская), руккола, шпинат, редька, репа, редис, кресс-салат и другие, содержат мало жира и являются прекрасными источником витаминов
         </div>
     </div>
-    <!-- Заголовок "Паспортные данные" -->
+    
     <div class="title" id="passport" style="width: 380px">Паспортные данные</div>
     <table>
         <tr>
@@ -156,30 +156,30 @@
         
     <div class="link-to-main">
         <a href="#">К началу страницы</a>
-    <hr color="Black" size="15" width=600; isplay = flex; margin = 0 auto; margin-bottom = 20px>
+    <hr color="Black" size="15" width=600; display = flex; margin = 0 auto; margin-bottom = 20px>
     </div>
 
 
 
     
     <script>
-        // Получаем элементы DOM
+       
         const surnameElement = document.getElementById('surname');
         const nameElement = document.getElementById('name');
         const patronymicElement = document.getElementById('patronymic');
         const changeButton = document.getElementById('changeButton');
         const albumImages = document.querySelectorAll('.album-image');
 
-    // Добавляем обработчик события для каждого изображения
+    
     albumImages.forEach(image => {
         image.addEventListener('click', () => {
-            // Открываем изображение в новом окне
+            
             window.open(image.src, '_blank');
         });
     });
-        // Начальные значения
-        let isRussian = true; // Флаг для отслеживания текущего состояния
-        // Русские и латинские варианты данных
+        
+        let isRussian = true;
+        
         const russianData = {
             surname: 'Кожемяко',
             name: 'Татьяна',
@@ -190,20 +190,20 @@
             name: 'Tatiana',
             patronymic: 'Vladimirovna'
         };
-        // Обработчик клика на кнопку "Изменить"
+        
         changeButton.addEventListener('click', () => {
             if (isRussian) {
-                // Если сейчас русские значения, меняем на латинские
+                
                 surnameElement.textContent = latinData.surname;
                 nameElement.textContent = latinData.name;
                 patronymicElement.textContent = latinData.patronymic;
             } else {
-                // Если сейчас латинские значения, меняем на русские
+                
                 surnameElement.textContent = russianData.surname;
                 nameElement.textContent = russianData.name;
                 patronymicElement.textContent = russianData.patronymic;
             }
-            // Инвертируем флаг
+            
             isRussian = !isRussian;
         });
     </script>
