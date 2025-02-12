@@ -6,63 +6,70 @@
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <title>Задача</title>
 </head>
 <body>
     <div class="header">
-        <ul id="header" style="display: flex; list-style-type: none; padding: 0; gap: 20px;">
+        <ul id="header">
             <li><a href="index.html" style="color: #000">Главная</a></li>
             <li><a style="color: #000" href="store.html">Магазин</a></li>
             <li><a style="color: #000" href="order.html">Заказ</a></li>
             <li><a style="color: #000; font-weight: 700; font-size: 36px">Задача</a></li>
         </ul>
     </div>
-    <div class="order-container" style="margin: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
-        <div class="task-container" style="font-size: 18px; margin-bottom: 20px;">
+    <div class="order-container">
+        <div class="task-container">
             Имеются две ёмкости: кубическая с ребром A, цилиндрическая с высотой H и радиусом основания R. Определить, можно ли заполнить жидкостью объёма M первую ёмкость, вторую, обе.
         </div>
-        <form style="width: 730px; margin-top: 27px;">
-            <!-- Поле для ввода A -->
+        <form style="width: 730px; margin-top: 27px">
+            
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">A (ребро куба):</label>
+                <label class="col-sm-2 col-form-label">A</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="A" placeholder="Введите ребро куба" required>
+                    <input type="number" class="form-control" id="A" placeholder="Введите ребро куба">
                 </div>
             </div>
-            <!-- Поле для ввода H -->
+
+            
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">H (высота цилиндра):</label>
+                <label class="col-sm-2 col-form-label">H</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="H" placeholder="Введите высоту цилиндра" required>
+                    <input type="number" class="form-control" id="H" placeholder="Введите высоту цилиндра">
                 </div>
             </div>
-            <!-- Поле для ввода R -->
+
+            
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">R (радиус основания):</label>
+                <label class="col-sm-2 col-form-label">R</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="R" placeholder="Введите радиус основания цилиндра" required>
+                    <input type="number" class="form-control" id="R" placeholder="Введите радиус основания цилиндра">
                 </div>
             </div>
-            <!-- Поле для ввода M -->
+
+            
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">M (объем жидкости):</label>
+                <label class="col-sm-2 col-form-label">M</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="M" placeholder="Введите объем жидкости" required>
+                    <input type="number" class="form-control" id="M" placeholder="Введите объем жидкости">
                 </div>
             </div>
-            <!-- Кнопка "Проверить" -->
+
+            
             <button type="button" class="btn btn-primary" id="checkButton" style="margin-top: 27px;">Проверить</button>
-            <!-- Результат решения задачи -->
+
+            
             <div class="form-group row" style="margin-top: 27px; justify-content: space-between; display: flex;">
-                <label class="col-sm-2 col-form-label" style="min-width: 250px;">Результат решения задачи:</label>
+                <label class="col-sm-2 col-form-label" style="min-width: 250px;">Результат решения задачи</label>
                 <div class="col-sm-10" style="min-width: 500px; flex: 0;">
                     <input type="text" class="form-control" id="result" readonly>
                 </div>
             </div>
+
+            
+            <button type="button" class="btn btn-primary" style="margin-top: 27px;">Отправить</button>
         </form>
     </div>
 
-    <!-- Встроенный JavaScript-код -->
+    
     <script>
         // Получаем элементы DOM
         const AInput = document.getElementById('A');
@@ -72,49 +79,38 @@
         const checkButton = document.getElementById('checkButton');
         const resultInput = document.getElementById('result');
 
-        // Добавляем обработчик клика на кнопку "Проверить"
+        
         checkButton.addEventListener('click', () => {
-            // Получаем значения из input'ов
+            
             const A = parseFloat(AInput.value);
             const H = parseFloat(HInput.value);
             const R = parseFloat(RInput.value);
             const M = parseFloat(MInput.value);
 
-            // Проверяем корректность введенных данных
-            if (isNaN(A) || A <= 0) {
-                resultInput.value = 'Ошибка: Ребро куба должно быть положительным числом!';
-                return;
-            }
-            if (isNaN(H) || H <= 0) {
-                resultInput.value = 'Ошибка: Высота цилиндра должна быть положительным числом!';
-                return;
-            }
-            if (isNaN(R) || R <= 0) {
-                resultInput.value = 'Ошибка: Радиус основания цилиндра должен быть положительным числом!';
-                return;
-            }
-            if (isNaN(M) || M <= 0) {
-                resultInput.value = 'Ошибка: Объем жидкости должен быть положительным числом!';
+            
+            if (isNaN(A) || isNaN(H) || isNaN(R) || isNaN(M) || A <= 0 || H <= 0 || R <= 0 || M <= 0) {
+                resultInput.value = 'Введите корректные положительные числа!';
                 return;
             }
 
-            // Вычисляем объемы
-            const cubeVolume = Math.pow(A, 3); // Объем куба
-            const cylinderVolume = Math.PI * Math.pow(R, 2) * H; // Объем цилиндра
+            
+            const cubeVolume = Math.pow(A, 3); 
+            const cylinderVolume = Math.PI * Math.pow(R, 2) * H; 
 
-            // Формируем результат
+            
             let result = '';
+
             if (M <= cubeVolume && M <= cylinderVolume) {
-                result = 'Жидкость может заполнить обе ёмкости.';
+                result = 'Да Да Да';
             } else if (M <= cubeVolume) {
-                result = 'Жидкость может заполнить только кубическую ёмкость.';
+                result = 'Да Нет Нет';
             } else if (M <= cylinderVolume) {
-                result = 'Жидкость может заполнить только цилиндрическую ёмкость.';
+                result = 'Нет Да Нет';
             } else {
-                result = 'Жидкость не может заполнить ни одну из ёмкостей.';
+                result = 'Нет Нет Нет';
             }
 
-            // Отображаем результат
+            
             resultInput.value = result;
         });
     </script>
