@@ -33,10 +33,7 @@
     <div class="order-container">
       
       <form 
-        action="https://www.google.com/search?" 
-    
-        method="GET" 
-        target="_blank" 
+        action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank"
         style="width: 730px;"
       >
         
@@ -155,10 +152,20 @@
         </div>
 
         
-        <div class="form-group">
-          <label>Название файла</label>
-          <input type="text" class="form-control" />
-        </div>
+         <p>Название файла: <input type="Техт" name="000_file_name" value="Н_ОW_Г_326510_1_Ivanov.txt" size='30'></p>
+
+    <p> Тип записи в файл:<select name="010_mode">
+        <OPTION value="a">a - дозаписать в файл</OPTION>
+        <OPTION value="w">w - очисить файл и записать в файл</OPTION>
+    </select></p>
+
+    <input type="hidden" name="function"  value="page">
+    <input type="hidden" name="page_id"  value="3">
+
+    <p>
+        <input type="Reset"  name="Reset"  value="Обновить">
+        <input type="Submit" name="submit"  value="Отправить">
+    </p>
 
         
         <div class="buttons">
