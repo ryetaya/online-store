@@ -37,6 +37,6 @@ checkButton.addEventListener('click', () => {
         result = 'Жидкость не может заполнить ни одну из ёмкостей.';
     }
 
-    // Отображаем результат
+    
     resultInput.value = result;
 });
